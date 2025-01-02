@@ -35,6 +35,7 @@ class ProductItem extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Column(
+                    //add this texts in another column give them padding
                     mainAxisSize: MainAxisSize.min,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -108,10 +109,12 @@ class ProductItem extends StatelessWidget {
             ),
           ),
         ),
+        // adding positioned to favorite and add buttons to be on card widget
+        //this for favorite button
         Positioned(
           right: 12,
           top: 10,
-          child: Container(
+          child: Container( // adding container to it to change the background color
             width: 40,
             height: 40,
             decoration: BoxDecoration(
@@ -127,6 +130,7 @@ class ProductItem extends StatelessWidget {
             ),
           ),
         ),
+        //this is for add button
         Positioned(
           right: 12,
           bottom: 6,

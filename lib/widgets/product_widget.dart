@@ -65,6 +65,7 @@ class ProductWidget extends StatelessWidget {
   const ProductWidget({super.key});
   @override
   Widget build(BuildContext context) {
+    //using the package to adapt the grid view to height of the widget
     return DynamicHeightGridView(
         builder: (ctx, index) {
           return products[index];

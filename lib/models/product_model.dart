@@ -1,3 +1,4 @@
+//adding this model to take inistance from it for every product 
 class Product{
  const Product({
     required this.category,
