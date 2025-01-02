@@ -3,10 +3,11 @@ import 'package:e_commerce/models/product_model.dart';
 
 class ProductItem extends StatelessWidget {
   const ProductItem({required this.product, super.key});
-  final Product product;
+  final Product product; //recive on product to display content in item
   @override
   Widget build(BuildContext context) {
     return Stack(
+      // add stack to add on it favorite and add button
       children: [
         SizedBox(
           width: 210,
@@ -69,21 +70,21 @@ class ProductItem extends StatelessWidget {
                               color: Color.fromARGB(255, 11, 6, 84),
                             ),
                           ),
-                          const Spacer(),
+                          const SizedBox(width: 20,),
                           const Text(
                             '2000 EGP',
                             style: TextStyle(
                               decorationColor:
                                   Color.fromARGB(255, 64, 135, 181),
                               decoration: TextDecoration.lineThrough,
-                              fontSize: 17,
+                              fontSize: 14,
                               color: Color.fromARGB(255, 64, 135, 181),
                             ),
                           ),
                         ],
                       ),
                       const SizedBox(
-                        height: 10,
+                        height: 15,
                       ),
                       Row(
                         children: [
