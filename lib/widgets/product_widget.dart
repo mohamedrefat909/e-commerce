@@ -8,7 +8,10 @@ class ProductWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return GridView(
       gridDelegate:
-          const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
+          const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2,
+          childAspectRatio: 3/2,
+          
+          ),
       children: const [
         ProductItem(
           product: Product(
