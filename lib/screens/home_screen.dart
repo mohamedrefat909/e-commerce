@@ -8,7 +8,6 @@ class HomeScreen extends StatelessWidget{
       appBar: AppBar(
         title: const Text('E-commerce'),
       ),
-      body: ProductItem(),
     );
   }
 }
