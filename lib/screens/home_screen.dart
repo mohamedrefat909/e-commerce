@@ -1,8 +1,6 @@
-import 'package:e_commerce/models/product_model.dart';
 import 'package:e_commerce/providers/products_provider.dart';
 import 'package:e_commerce/widgets/product_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:e_commerce/widgets/product_item.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class HomeScreen extends ConsumerStatefulWidget {
@@ -13,16 +11,16 @@ class HomeScreen extends ConsumerStatefulWidget {
 }
 
 class _HomeScreenState extends ConsumerState<HomeScreen> {
-  late Future loadData;
+  late Future loadData; // i define it and make it late beacuse it will be initialzed before i need it 
   @override
   void initState() {
-    loadData = ref.read(productsProvider.notifier).getProducts();
+    loadData = ref.read(productsProvider.notifier).getProducts(); //to load data from database before build method 
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
-    final listofProducts=ref.watch(productsProvider);
+    final listofProducts=ref.watch(productsProvider); //to get list of products from riverpod
     return Scaffold(
       appBar: AppBar(
         title: const Text('E-commerce'),
@@ -36,7 +34,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
           if(snapshot.hasError){
             return const Center(child: Text('Has Internet Connection Error'),);
           }
-          return  ProductWidget(products:listofProducts,);
+          return  ProductWidget(products:listofProducts,);//i send list of products to Product widget
         },
       ),
     );

@@ -9,15 +9,16 @@ class ProductWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     //using the package to adapt the grid view to height of the widget
-    return products.isNotEmpty
+    return products.isNotEmpty //this check if if list empty or not 
         ? DynamicHeightGridView(
             builder: (ctx, index) {
-              return ProductItem(product: products[index]);
+              return ProductItem(product: products[index]);//this go through list i passed and convert it to to Product Item  to dispaly it in gird in screen
+
             },
             itemCount: products.length,
             crossAxisCount: 2)
         : const Center(
-            child: Text('There is no products'),
+            child: Text('There is no products'),//if the list is empty will display this text
           );
   }
 }
